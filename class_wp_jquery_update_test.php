@@ -220,87 +220,87 @@ class WP_Jquery_Update_Test {
 		?>
 		<div class="wrap" style="max-width: 42rem;">
 
-		<h1><?php _e( 'Test jQuery Updates', 'wp-jquery-test' ); ?></h1>
+		<h1><?php _e( 'Test jQuery Updates', 'wp-jquery-update-test' ); ?></h1>
 
 		<?php if ( isset( $_GET['jqtest-settings-saved'] ) ) { ?>
 		<div class="notice notice-success is-dismissible">
-			<p><strong><?php _e( 'Settings saved.', 'wp-jquery-test' ); ?></strong></p>
+			<p><strong><?php _e( 'Settings saved.', 'wp-jquery-update-test' ); ?></strong></p>
 		</div>
 		<?php } ?>
 
 		<p>
-			<?php _e( 'This plugin is intended for testing of different versions of jQuery and jQuery UI before updating them in WordPress.', 'wp-jquery-test' ); ?>
-			<?php _e( 'It is not intended for use in production.', 'wp-jquery-test' ); ?>
+			<?php _e( 'This plugin is intended for testing of different versions of jQuery and jQuery UI before updating them in WordPress.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'It is not intended for use in production.', 'wp-jquery-update-test' ); ?>
 		</p>
 
 		<p>
-			<?php _e( 'It includes jQuery 3.5.1, jQuery Migrate 3.3.0, and jQuery UI 1.12.1.', 'wp-jquery-test' ); ?>
-			<?php _e( 'jQuery UI has been re-built for full backwards compatibility with WordPress.', 'wp-jquery-test' ); ?>
+			<?php _e( 'It includes jQuery 3.5.1, jQuery Migrate 3.3.0, and jQuery UI 1.12.1.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'jQuery UI has been re-built for full backwards compatibility with WordPress.', 'wp-jquery-update-test' ); ?>
 		</p>
 
 		<p>
-			<?php _e( 'To test:', 'wp-jquery-test' ); ?>
+			<?php _e( 'To test:', 'wp-jquery-update-test' ); ?>
 		</p>
 
 		<ol>
 			<li>
-				<?php _e( 'Use the current version of jQuery in WordPress but disable jQuery Migrate.', 'wp-jquery-test' ); ?>
-				<?php _e( 'This is planned for WordPress 5.5 and is the default setting.', 'wp-jquery-test' ); ?>
+				<?php _e( 'Use the current version of jQuery in WordPress but disable jQuery Migrate.', 'wp-jquery-update-test' ); ?>
+				<?php _e( 'This is planned for WordPress 5.5 and is the default setting.', 'wp-jquery-update-test' ); ?>
 			</li>
 			<li>
-				<?php _e( 'Latest jQuery with the latest jQuery Migrate.', 'wp-jquery-test' ); ?>
-				<?php _e( 'More information:', 'wp-jquery-test' ); ?>
+				<?php _e( 'Latest jQuery with the latest jQuery Migrate.', 'wp-jquery-update-test' ); ?>
+				<?php _e( 'More information:', 'wp-jquery-update-test' ); ?>
 				<?php
 					printf(
-						__( '<a href="%s">jQuery Core 3.0 Upgrade Guide</a>,', 'wp-jquery-test' ),
+						__( '<a href="%s">jQuery Core 3.0 Upgrade Guide</a>,', 'wp-jquery-update-test' ),
 						'https://jquery.com/upgrade-guide/3.0/'
 					);
 				?>
 				<?php
 					printf(
-						__( '<a href="%s">jQuery Core 3.5 Upgrade Guide</a>.', 'wp-jquery-test' ),
+						__( '<a href="%s">jQuery Core 3.5 Upgrade Guide</a>.', 'wp-jquery-update-test' ),
 						'https://jquery.com/upgrade-guide/3.5/'
 					);
 				?>
 			</li>
 			<li>
-				<?php _e( 'Latest jQuery with latest jQuery Migrate and latest jQuery UI.', 'wp-jquery-test' ); ?>
-				<?php _e( 'This is tentatively planned for WordPress 5.6 depending on test results.', 'wp-jquery-test' ); ?>
+				<?php _e( 'Latest jQuery with latest jQuery Migrate and latest jQuery UI.', 'wp-jquery-update-test' ); ?>
+				<?php _e( 'This is tentatively planned for WordPress 5.6 depending on test results.', 'wp-jquery-update-test' ); ?>
 			</li>
 			<li>
-				<?php _e( 'Latest jQuery (without jQuery Migrate), and latest jQuery UI.', 'wp-jquery-test' ); ?>
-				<?php _e( 'This is tentatively planned for WordPress 5.7 or later depending on test results.', 'wp-jquery-test' ); ?>
+				<?php _e( 'Latest jQuery (without jQuery Migrate), and latest jQuery UI.', 'wp-jquery-update-test' ); ?>
+				<?php _e( 'This is tentatively planned for WordPress 5.7 or later depending on test results.', 'wp-jquery-update-test' ); ?>
 			</li>
 		</ol>
 
 		<p>
 			<?php
 				printf(
-					__( 'If you find a jQuery related bug <a href="%s">please report it</a>.', 'wp-jquery-test' ),
+					__( 'If you find a jQuery related bug <a href="%s">please report it</a>.', 'wp-jquery-update-test' ),
 					'https://github.com/WordPress'
 				);
 			?>
 			<?php
 				printf(
-					__( 'If the bug is in a jQuery plugin please also check if there is <a href="%s">a new version on NPM</a>.', 'wp-jquery-test' ),
+					__( 'If the bug is in a jQuery plugin please also check if there is <a href="%s">a new version on NPM</a>.', 'wp-jquery-update-test' ),
 					'https://www.npmjs.com/search?q=keywords:jquery-plugin'
 				);
 			?>
-			<?php _e( 'When reporting an issue please include the versions of jQuery, jQuery Migrate, and jQuery UI.', 'wp-jquery-test' ); ?>
-			<?php _e( 'This plugin outputs these versions in the browser console.', 'wp-jquery-test' ); ?>
+			<?php _e( 'When reporting an issue please include the versions of jQuery, jQuery Migrate, and jQuery UI.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'This plugin outputs these versions in the browser console.', 'wp-jquery-update-test' ); ?>
 		</p>
 
 		<form method="post">
 		<?php wp_nonce_field( 'wp-jquery-test-settings', 'wp-jquery-test-save' ); ?>
 		<table class="form-table">
 			<tr class="classic-editor-user-options">
-				<th scope="row"><?php _e( 'jQuery version', 'wp-jquery-test' ); ?></th>
+				<th scope="row"><?php _e( 'jQuery version', 'wp-jquery-update-test' ); ?></th>
 				<td>
 					<p>
 						<input type="radio" name="jquery-test-version" id="version-default" value="default"
 							<?php checked( $settings['version'] === 'default' ); ?>
 						/>
-						<label for="version-default"><?php _e( 'Default', 'wp-jquery-test' ); ?></label>
+						<label for="version-default"><?php _e( 'Default', 'wp-jquery-update-test' ); ?></label>
 					</p>
 					<p>
 						<input type="radio" name="jquery-test-version" id="version-351" value="3.5.1"
@@ -312,31 +312,31 @@ class WP_Jquery_Update_Test {
 			</tr>
 
 			<tr>
-				<th scope="row"><?php _e( 'jQuery Migrate', 'wp-jquery-test' ); ?></th>
+				<th scope="row"><?php _e( 'jQuery Migrate', 'wp-jquery-update-test' ); ?></th>
 				<td>
 					<p>
 						<input type="radio" name="jquery-test-migrate" id="migrate-enable" value="enable"
 							<?php checked( $settings['migrate'] === 'enable' ); ?>
 						/>
-						<label for="migrate-enable"><?php _e( 'Enable', 'wp-jquery-test' ); ?></label>
+						<label for="migrate-enable"><?php _e( 'Enable', 'wp-jquery-update-test' ); ?></label>
 					</p>
 					<p>
 						<input type="radio" name="jquery-test-migrate" id="migrate-disable" value="disable"
 							<?php checked( $settings['migrate'] === 'disable' ); ?>
 						/>
-						<label for="migrate-disable"><?php _e( 'Disable', 'wp-jquery-test' ); ?></label>
+						<label for="migrate-disable"><?php _e( 'Disable', 'wp-jquery-update-test' ); ?></label>
 					</p>
 				</td>
 			</tr>
 
 			<tr class="classic-editor-user-options">
-				<th scope="row"><?php _e( 'jQuery UI version', 'wp-jquery-test' ); ?></th>
+				<th scope="row"><?php _e( 'jQuery UI version', 'wp-jquery-update-test' ); ?></th>
 				<td>
 					<p>
 						<input type="radio" name="jquery-test-uiversion" id="uiversion-default" value="default"
 							<?php checked( $settings['uiversion'] === 'default' ); ?>
 						/>
-						<label for="uiversion-default"><?php _e( 'Default', 'wp-jquery-test' ); ?></label>
+						<label for="uiversion-default"><?php _e( 'Default', 'wp-jquery-update-test' ); ?></label>
 					</p>
 					<p>
 						<input type="radio" name="jquery-test-uiversion" id="uiversion-1121" value="1.12.1"
@@ -354,7 +354,7 @@ class WP_Jquery_Update_Test {
 	}
 
 	public static function add_menu_item() {
-		$menu_title = __( 'Test jQuery Updates', 'wp-jquery-test' );
+		$menu_title = __( 'Test jQuery Updates', 'wp-jquery-update-test' );
 		add_plugins_page( $menu_title, $menu_title, 'install_plugins', self::$plugin_dir_name, array( __CLASS__, 'settings_ui' ) );
 	}
 
@@ -365,7 +365,7 @@ class WP_Jquery_Update_Test {
 			// Prevent PHP warnings when a plugin uses this filter incorrectly.
 			$links   = (array) $links;
 			$url     = self_admin_url( 'plugins.php?page=' . self::$plugin_dir_name );
-			$links[] = sprintf( '<a href="%s">%s</a>', $url, __( 'Settings', 'wp-jquery-test' ) );
+			$links[] = sprintf( '<a href="%s">%s</a>', $url, __( 'Settings', 'wp-jquery-update-test' ) );
 		}
 
 		return $links;
