@@ -12,7 +12,7 @@
  * Contributors: wordpressdotorg, azaozz
  * License: GPLv2
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: wp-jquery-test
+ * Text Domain: wp-jquery-update-test
  * Network: true
  */
 
