@@ -23,7 +23,7 @@ To test:
 3. Latest jQuery with the latest jQuery Migrate and latest jQuery UI.
 4. As above without jQuery Migrate.
 
-If you find a bug in a jQuery related script please report it. Instructions are available at the plugin's settings page.
+If you find a bug in a jQuery related script [please report it](https://github.com/WordPress/wp-jquery-update-test). Instructions are available at the plugin's settings page.
 
 = Default settings =
 

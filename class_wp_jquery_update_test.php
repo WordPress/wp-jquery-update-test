@@ -277,7 +277,7 @@ class WP_Jquery_Update_Test {
 			<?php
 				printf(
 					__( 'If you find a jQuery related bug <a href="%s">please report it</a>.', 'wp-jquery-update-test' ),
-					'https://github.com/WordPress'
+					'https://github.com/WordPress/wp-jquery-update-test'
 				);
 			?>
 			<?php
