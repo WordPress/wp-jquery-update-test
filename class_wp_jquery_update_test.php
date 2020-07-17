@@ -52,8 +52,11 @@ class WP_Jquery_Update_Test {
 		if ( 'default' === $settings['version'] ) {
 			// If Migrate is disabled
 			if ( 'disable' === $settings['migrate'] ) {
-				// Register jQuery without jquery-migrate.js
+				// Register jQuery without jquery-migrate.js. For WordPress 5.4 and 5.5-alpha.
 				self::set_script( $scripts, 'jquery', false, array( 'jquery-core' ), '1.12.4-wp' );
+			} else {
+				// For 5.5-beta1 or newer.
+				self::set_script( $scripts, 'jquery', false, array( 'jquery-core', 'jquery-migrate' ), '1.12.4-wp' );
 			}
 		} elseif ( '3.5.1' === $settings['version'] ) {
 			$assets_url = plugins_url( 'assets/', __FILE__ );
