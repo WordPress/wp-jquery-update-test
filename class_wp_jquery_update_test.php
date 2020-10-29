@@ -11,6 +11,12 @@ if ( ! class_exists( 'WP_Jquery_Update_Test' ) ) :
 class WP_Jquery_Update_Test {
 
 	private static $plugin_dir_name;
+	private static $default_settings = array(
+		'version'        => 'default',
+		'migrate'        => 'default',
+		'plugin_version' => '2.0',
+	);
+
 	private function __construct() {}
 
 	public static function init_actions() {
@@ -42,9 +48,26 @@ class WP_Jquery_Update_Test {
 	public static function replace_scripts( $scripts ) {
 		$settings = self::parse_settings();
 
-		if ( 'disable' === $settings['migrate'] ) {
-			// Register jQuery without jquery-migrate.js.
-			self::set_script( $scripts, 'jquery', false, array( 'jquery-core' ), '3.5.1' );
+		if ( 'default' === $settings['version'] ) {
+			if ( 'disable' === $settings['migrate'] ) {
+				// Register jQuery without jquery-migrate.js.
+				self::set_script( $scripts, 'jquery', false, array( 'jquery-core' ), '3.5.1' );
+			}
+		} elseif ( '1.12.4' === $settings['version'] ) {
+			$assets_url = plugins_url( 'assets/', __FILE__ );
+
+			// Set 'jquery-core' to 1.12.4-wp.
+			self::set_script( $scripts, 'jquery-core', $assets_url . 'jquery-1.12.4-wp.min.js', array(), '1.12.4-wp' );
+			// Set 'jquery-migrate' to 1.4.1.
+			self::set_script( $scripts, 'jquery-migrate', $assets_url . 'jquery-migrate-1.4.1.min.js', array(), '1,4,1' );
+
+			$deps = array( 'jquery-core' );
+
+			if ( 'disable' !== $settings['migrate'] ) {
+				$deps[] = 'jquery-migrate';
+			}
+
+			self::set_script( $scripts, 'jquery', false, $deps, '1.12.4-wp' );
 		}
 	}
 
@@ -56,12 +79,7 @@ class WP_Jquery_Update_Test {
 			$settings = array();
 		}
 
-		$defaults = array(
-			'migrate'        => 'default',
-			'plugin_version' => '2.0',
-		);
-
-		return wp_parse_args( $settings, $defaults );
+		return wp_parse_args( $settings, self::$default_settings );
 	}
 
 	// Pre-register scripts on 'wp_default_scripts' action, they won't be overwritten by $wp_scripts->add().
@@ -109,9 +127,11 @@ class WP_Jquery_Update_Test {
 			'default',
 			'enable',
 			'disable',
+			'1.12.4',
 		);
 
 		$names = array(
+			'version',
 			'migrate',
 		);
 
@@ -150,8 +170,10 @@ class WP_Jquery_Update_Test {
 		<?php } ?>
 
 		<p>
-			<?php _e( 'This plugin is intended for testing of jQuery without jQuery Migrate in WordPress version 5.6 and newer.', 'wp-jquery-update-test' ); ?>
-			<?php _e( 'For testing in WordPress 5.5 or earlier please install version 1.0.1 of Test jQuery Updates.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'This plugin is intended for testing of jQuery and jQuery Migrate in WordPress 5.6.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'It can also load the previous version of jQuery 1.12.4 (used in WordPress 5.4 and earlier) with or without jQuery Migrate 1.4.1.', 'wp-jquery-update-test' ); ?>
+			<br>
+			<?php _e( 'For testing in WordPress 5.5 or earlier please install version 1.0.1 of the plugin.', 'wp-jquery-update-test' ); ?>
 		</p>
 
 		<p>
@@ -174,6 +196,24 @@ class WP_Jquery_Update_Test {
 		<form method="post">
 		<?php wp_nonce_field( 'wp-jquery-test-settings', 'wp-jquery-test-save' ); ?>
 		<table class="form-table">
+			<tr class="classic-editor-user-options">
+				<th scope="row"><?php _e( 'jQuery version', 'wp-jquery-update-test' ); ?></th>
+				<td>
+					<p>
+						<input type="radio" name="jquery-test-version" id="version-default" value="default"
+							<?php checked( $settings['version'] === 'default' ); ?>
+						/>
+						<label for="version-default"><?php _e( 'Default', 'wp-jquery-update-test' ); ?></label>
+					</p>
+					<p>
+						<input type="radio" name="jquery-test-version" id="version-1.12.4" value="1.12.4"
+							<?php checked( $settings['version'] === '1.12.4' ); ?>
+						/>
+						<label for="version-1.12.4">1.12.4</label>
+					</p>
+				</td>
+			</tr>
+
 			<tr>
 				<th scope="row"><?php _e( 'jQuery Migrate', 'wp-jquery-update-test' ); ?></th>
 				<td>
@@ -222,12 +262,7 @@ class WP_Jquery_Update_Test {
 	public static function activate() {
 		register_uninstall_hook( __FILE__, array( __CLASS__, 'uninstall' ) );
 
-		$$defaults = array(
-			'migrate'        => 'default',
-			'plugin_version' => '2.0',
-		);
-
-		add_site_option( 'wp-jquery-test-settings', $defaults );
+		add_site_option( 'wp-jquery-test-settings', self::$default_settings );
 	}
 
 	/**
