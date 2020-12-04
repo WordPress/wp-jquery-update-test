@@ -21,6 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Only for WP 5.5.x or lower (for now)
-//if ( version_compare( $GLOBALS['wp_version'], '5.6-alpha', '<' ) ) {
+if ( version_compare( $GLOBALS['wp_version'], '5.6-alpha', '<' ) ) {
 	include_once __DIR__ . '/class_wp_jquery_update_test.php';
-//}
+}
