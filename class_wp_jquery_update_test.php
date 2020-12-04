@@ -66,15 +66,15 @@ class WP_Jquery_Update_Test {
 				self::set_script( $scripts, 'jquery', false, array( 'jquery-core' ), '3.5.1' );
 
 				// Set 'jquery-core' to 3.5.1
-				self::set_script( $scripts, 'jquery-core', $assets_url . 'jquery-3.5.1.min.js', array(), '3.5.1' );
+				self::set_script( $scripts, 'jquery-core', $assets_url . 'jquery-3.5.1.js', array(), '3.5.1' );
 
 				// Reset/remove 'jquery-migrate'
 				// TBD: needed?
 				self::set_script( $scripts, 'jquery-migrate', false, array() );
 			} else {
 				self::set_script( $scripts, 'jquery', false, array( 'jquery-core', 'jquery-migrate' ), '3.5.1' );
-				self::set_script( $scripts, 'jquery-core', $assets_url . 'jquery-3.5.1.min.js', array(), '3.5.1' );
-				self::set_script( $scripts, 'jquery-migrate', $assets_url . 'jquery-migrate-3.3.0.min.js', array(), '3.3.0' );
+				self::set_script( $scripts, 'jquery-core', $assets_url . 'jquery-3.5.1.js', array(), '3.5.1' );
+				self::set_script( $scripts, 'jquery-migrate', $assets_url . 'jquery-migrate-3.3.2.js', array(), '3.3.2' );
 			}
 
 			if ( '1.12.1' === $settings['uiversion'] ) {
@@ -237,7 +237,7 @@ class WP_Jquery_Update_Test {
 		</p>
 
 		<p>
-			<?php _e( 'It includes jQuery 3.5.1, jQuery Migrate 3.3.0, and jQuery UI 1.12.1.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'It includes jQuery 3.5.1, jQuery Migrate 3.3.2, and jQuery UI 1.12.1.', 'wp-jquery-update-test' ); ?>
 			<?php _e( 'jQuery UI has been re-built for full backwards compatibility with WordPress.', 'wp-jquery-update-test' ); ?>
 		</p>
 
