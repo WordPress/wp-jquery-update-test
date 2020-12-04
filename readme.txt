@@ -1,7 +1,7 @@
 === Test jQuery Updates ===
 Contributors: wordpressdotorg, azaozz
 Tags: jquery
-Requires at least: 5.6
+Requires at least: 5.6-alpha
 Tested up to: 5.6
 Stable tag: 1.0.2
 Requires PHP: 5.6
