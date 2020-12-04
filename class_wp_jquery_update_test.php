@@ -11,6 +11,8 @@ if ( ! class_exists( 'WP_Jquery_Update_Test' ) ) :
 class WP_Jquery_Update_Test {
 
 	private static $plugin_dir_name;
+	private static $is_supported;
+
 	private static $default_settings = array(
 		'version'        => 'default',
 		'migrate'        => 'default',
@@ -19,12 +21,11 @@ class WP_Jquery_Update_Test {
 
 	private function __construct() {}
 
-	private static function is_supported() {
-		return version_compare( $GLOBALS['wp_version'], '5.7-alpha', '<' );
-	}
-
 	public static function init_actions() {
 		self::$plugin_dir_name = basename( __DIR__ );
+
+		// Support WP version 5.6 and 5.7 alpha/beta/RC.
+		self::$is_supported = version_compare( $GLOBALS['wp_version'], '5.7', '<' );
 
 		// Add a link to the plugin's settings in the plugins list table.
 		add_filter( 'plugin_action_links', array( __CLASS__, 'add_settings_link' ), 10, 2 );
@@ -33,7 +34,7 @@ class WP_Jquery_Update_Test {
 		add_action( 'admin_menu', array( __CLASS__, 'add_menu_item' ) );
 		add_action( 'network_admin_menu', array( __CLASS__, 'add_menu_item' ) );
 
-		if ( ! self::is_supported() ) {
+		if ( ! self::$is_supported ) {
 			return;
 		}
 
@@ -171,7 +172,7 @@ class WP_Jquery_Update_Test {
 
 		<h1><?php _e( 'Test jQuery Updates', 'wp-jquery-update-test' ); ?></h1>
 
-		<?php if ( ! self::is_supported() ) { ?>
+		<?php if ( ! self::$is_supported ) { ?>
 			<div class="notice notice-error">
 				<p><strong><?php _e( 'WordPress version not supported.', 'wp-jquery-update-test' ); ?></strong></p>
 			</div>
@@ -187,7 +188,8 @@ class WP_Jquery_Update_Test {
 				?>
 			</p>
 			<p>
-				<?php _e( 'For testing in WordPress 5.5 or earlier please install version 1.0.1 of the plugin.', 'wp-jquery-update-test' ); ?>
+				<?php _e( 'For testing in WordPress 5.5 or earlier please install version 1.0.2 of the plugin.', 'wp-jquery-update-test' ); ?>
+				<?php _e( 'WordPress version 5.7 and newer are not supported yet.', 'wp-jquery-update-test' ); ?>
 			</p>
 		<?php } else { ?>
 
@@ -284,7 +286,7 @@ class WP_Jquery_Update_Test {
 			// Prevent PHP warnings when a plugin uses this filter incorrectly.
 			$links = (array) $links;
 
-			if ( ! self::is_supported() ) {
+			if ( ! self::$is_supported ) {
 				$text = __( 'WordPress version not supported.', 'wp-jquery-update-test' );
 				$links['wp-jquery-update-test button-link-delete'] = $text;
 			} else {
