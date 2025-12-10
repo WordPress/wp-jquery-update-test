@@ -41,9 +41,9 @@ class WP_Jquery_Update_Test {
 		$assets_url = plugins_url( 'assets/', __FILE__ );
 		
 		// Use 'jquery-core' 4.0.0-beta, and 'jquery-migrate' 3.5.0.
-		self::set_script( $scripts, 'jquery', false, array( 'jquery-core', 'jquery-migrate' ), '4.0.0-beta.2' );
-		self::set_script( $scripts, 'jquery-core', $assets_url . 'jquery-4.0.0-beta.2.js', array(), '4.0.0-beta.2' );
-		self::set_script( $scripts, 'jquery-migrate', $assets_url . 'jquery-migrate-3.5.2.js', array(), '3.5.2' );
+		self::set_script( $scripts, 'jquery', false, array( 'jquery-core', 'jquery-migrate' ), '4.0.0-rc.1' );
+		self::set_script( $scripts, 'jquery-core', $assets_url . 'jquery-4.0.0-rc.1.js', array(), '4.0.0-rc.1' );
+		self::set_script( $scripts, 'jquery-migrate', $assets_url . 'jquery-migrate-4.0.0-beta.1.js', array(), '4.0.0-beta.1' );
 	}
 
 	// Pre-register scripts on 'wp_default_scripts' action, they won't be overwritten by $wp_scripts->add().
@@ -80,12 +80,12 @@ class WP_Jquery_Update_Test {
 		<h1><?php _e( 'Test jQuery Updates', 'wp-jquery-update-test' ); ?></h1>
 
 		<p>
-			<?php _e( 'This plugin is intended for testing of jQuery version 4.0.0-beta before updating it in WordPress.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'This plugin is intended for testing of jQuery version 4.0.0 before updating it in WordPress.', 'wp-jquery-update-test' ); ?>
 			<?php _e( 'It is not intended for use in production.', 'wp-jquery-update-test' ); ?>
 		</p>
 
 		<p>
-			<?php _e( 'Currently jQuery 4.0.0-beta.2 and jQuery Migrate 3.5.2 are included. An updated version of jQuery UI may be included when it becomes available.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'Currently jQuery 4.0.0-rc.1 and jQuery Migrate 4.0.0-beta.1 are included. An updated version of jQuery UI may be included when it becomes available.', 'wp-jquery-update-test' ); ?>
 		</p>
 		
 		<p>

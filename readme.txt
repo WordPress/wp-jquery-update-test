@@ -2,8 +2,8 @@
 Contributors: wordpressdotorg, azaozz
 Tags: jquery
 Requires at least: 6.5
-Tested up to: 6.7
-Stable tag: 3.0.0
+Tested up to: 6.9
+Stable tag: 3.0.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,9 +12,9 @@ Test different versions of jQuery.
 
 == Description ==
 
-Test jQuery Updates is an official plugin by the WordPress team that is intended for testing of jQuery and jQuery UI before updating them in WordPress. It is not intended for use in production.
+Test jQuery Updates is an official plugin by the WordPress team that is intended for testing of jQuery before updating it in WordPress. It is not intended for use in production.
 
-Version 3.0 of the plugin is intended for testing of jQuery 4.0.0 beta in WordPress 6.5, 6.6, and 6.7.
+Version 3.0.2 of the plugin is intended for testing of jQuery 4.0.0-rc.1 in WordPress 6.9 and later.
 
 If you find a bug in a jQuery related script [please report it](https://github.com/WordPress/wp-jquery-update-test/issues).
 
@@ -23,6 +23,9 @@ If you find a bug in a jQuery related script [please report it](https://github.c
 When activated this plugin will replace the bundled version of jQuery with the version from this plugin. There are no other settings at this time. To stop testing please deactivate the plugin.
 
 == Changelog ==
+
+= 3.0.2 =
+* Update for testing with jQuery 4.0.0-rc.1 and jQuery Migrate 4.0.0-beta.1.
 
 = 3.0.1 =
 * Update for testing with jQuery 4.0.0-beta2 and jQuery Migrate 3.5.2.
