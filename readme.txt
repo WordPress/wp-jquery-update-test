@@ -3,7 +3,7 @@ Contributors: wordpressdotorg, azaozz
 Tags: jquery
 Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 3.0.2
+Stable tag: 3.0.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,8 +24,11 @@ When activated this plugin will replace the bundled version of jQuery with the v
 
 == Changelog ==
 
-= 3.0.2 =
+= 3.0.3 =
 * Update for testing with jQuery 4.0.0-rc.1 and jQuery Migrate 4.0.0-beta.1.
+
+= 3.0.2 =
+* Update for testing in WordPress 6.8.
 
 = 3.0.1 =
 * Update for testing with jQuery 4.0.0-beta2 and jQuery Migrate 3.5.2.
