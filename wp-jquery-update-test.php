@@ -3,7 +3,7 @@
  * Plugin Name: Test jQuery Updates
  * Plugin URI: https://wordpress.org/plugins/wp-jquery-update-test
  * Description: A feature plugin to help with testing updates of the jQuery and jQuery UI JavaScript libraries (not intended for use in production).
- * Version: 3.0.3
+ * Version: 3.1.0
  * Requires at least: 6.5
  * Requires PHP: 7.0
  * Author: The WordPress Team
