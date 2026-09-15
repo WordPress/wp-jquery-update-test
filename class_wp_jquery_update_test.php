@@ -39,11 +39,11 @@ class WP_Jquery_Update_Test {
 
 	public static function replace_scripts( $scripts ) {
 		$assets_url = plugins_url( 'assets/', __FILE__ );
-		
-		// Use 'jquery-core' 4.0.0-beta, and 'jquery-migrate' 3.5.0.
-		self::set_script( $scripts, 'jquery', false, array( 'jquery-core', 'jquery-migrate' ), '4.0.0-rc.1' );
-		self::set_script( $scripts, 'jquery-core', $assets_url . 'jquery-4.0.0-rc.1.js', array(), '4.0.0-rc.1' );
-		self::set_script( $scripts, 'jquery-migrate', $assets_url . 'jquery-migrate-4.0.0-beta.1.js', array(), '4.0.0-beta.1' );
+
+		// Use 'jquery-core' 4.0.0, and 'jquery-migrate' 4.0.2.
+		self::set_script( $scripts, 'jquery', false, array( 'jquery-core', 'jquery-migrate' ), '4.0.0' );
+		self::set_script( $scripts, 'jquery-core', $assets_url . 'jquery-4.0.0.js', array(), '4.0.0' );
+		self::set_script( $scripts, 'jquery-migrate', $assets_url . 'jquery-migrate-4.0.2.js', array(), '4.0.2' );
 	}
 
 	// Pre-register scripts on 'wp_default_scripts' action, they won't be overwritten by $wp_scripts->add().
@@ -85,7 +85,7 @@ class WP_Jquery_Update_Test {
 		</p>
 
 		<p>
-			<?php _e( 'Currently jQuery 4.0.0-rc.1 and jQuery Migrate 4.0.0-beta.1 are included. An updated version of jQuery UI may be included when it becomes available.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'Currently jQuery 4.0.0 and jQuery Migrate 4.0.2 are included. An updated version of jQuery UI may be included when it becomes available.', 'wp-jquery-update-test' ); ?>
 		</p>
 		
 		<p>
