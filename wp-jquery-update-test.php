@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Invalid request.' );
 }
 
-// Only for WP 6.5 - 7.0 (alpha, beta, RC, and release)
-if ( version_compare( $GLOBALS['wp_version'], '6.5', '>=' ) && version_compare( $GLOBALS['wp_version'], '7.1-alpha', '<' ) ) {
+// Only for WP 6.5 - 7.2 (alpha, beta, RC, and release)
+if ( version_compare( $GLOBALS['wp_version'], '6.5', '>=' ) && version_compare( $GLOBALS['wp_version'], '7.3-alpha', '<' ) ) {
 	include_once __DIR__ . '/class_wp_jquery_update_test.php';
 }
